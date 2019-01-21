@@ -102,3 +102,12 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# PyCharm project
+.idea/
+
+# Old test code
+test_code/
+
+# Passwords file 
+pwned-passwords-sha1-ordered-by-hash-v4.txt
