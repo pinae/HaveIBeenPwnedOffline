@@ -7,26 +7,12 @@ from argparse import ArgumentParser
 
 
 def binary_search(hex_hash, list_file, file_size):
-    hex_int = {}
-    for int_val, hex_c in enumerate("0123456789ABCDEF"):
-        hex_int[hex_c] = int_val
-
     def get_full_line(file, pos):
         file.seek(pos)
         while pos > 0 and file.read(1) != "\n":
             pos -= 1
             file.seek(pos)
         return file.readline(), pos
-
-    def hash_greater(hash1, hash2):
-        for pos in range(40):
-            hex_digit1 = hex_int[hash1[pos]]
-            hex_digit2 = hex_int[hash2[pos]]
-            if hex_digit1 > hex_digit2:
-                return True
-            elif hex_digit1 < hex_digit2:
-                return False
-        return False
 
     def search_hash(file, my_hash, start, end):
         if start >= end:
@@ -41,7 +27,7 @@ def binary_search(hex_hash, list_file, file_size):
         if pwned_hash == my_hash:
             print("Password found at byte {:11d}: \"{}\"".format(pivot, candidate_line.strip()))
             return int(count.strip())
-        if hash_greater(my_hash, pwned_hash):
+        if my_hash > pwned_hash:
             return search_hash(file, my_hash, file.tell(), end)
         else:
             return search_hash(file, my_hash, start, pivot)
