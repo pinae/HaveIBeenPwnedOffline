@@ -21,8 +21,6 @@ def binary_search(hex_hash, list_file, file_size):
         candidate_line, pivot = get_full_line(file, new_pos)
         # print("Trying line at pos {:11d}: \"{}\" (pivot position: {})".format(
         #     new_pos, candidate_line.strip(), pivot))
-        if len(candidate_line) < 40:
-            return 0
         pwned_hash, count = candidate_line.split(':')
         if pwned_hash == my_hash:
             print("Password found at byte {:11d}: \"{}\"".format(pivot, candidate_line.strip()))
