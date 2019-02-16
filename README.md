@@ -21,5 +21,11 @@ as params. On Ubuntu it would look like this:
 python binary_search.py "paSsword" "anotherSecurePassw0rd"
 ```
 
+To run the script in interactive mode without displaying plain passwords:
+
+```shell
+python binary_search.py -i
+```
+
 If the password contains characters which could be encoded 
 differently with different encodings 
