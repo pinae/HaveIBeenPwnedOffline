@@ -10,7 +10,7 @@ contains a 25GB txt file.
 
 Place it in the same folder as `binary_search.py`. 
 Currently it should be named 
-`pwned-passwords-sha1-ordered-by-hash-v4.txt`. If it has this 
+`pwned-passwords-sha1-ordered-by-hash-v5.txt`. If it has this 
 name you do not need to supply a filename for the script to
 search in.
 
