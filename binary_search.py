@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-from __future__ import division, print_function, unicode_literals
 from hashlib import sha1
 from os import stat
 from argparse import ArgumentParser
@@ -39,7 +38,7 @@ if __name__ == "__main__":
                                         ' will search for the hash in the list.')
     parser.add_argument('passwords', nargs='+')
     parser.add_argument('--pwned-passwords-ordered-by-hash-filename', required=False,
-                        default="pwned-passwords-sha1-ordered-by-hash-v4.txt")
+                        default="pwned-passwords-sha1-ordered-by-hash-v5.txt")
     args = parser.parse_args()
     with open(args.pwned_passwords_ordered_by_hash_filename, 'r') as pwned_passwords_file:
         pwned_passwords_file_size = stat(args.pwned_passwords_ordered_by_hash_filename).st_size
